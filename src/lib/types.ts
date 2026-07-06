@@ -8,6 +8,8 @@ export interface QuizConfig {
   optionCount: number;
   /** Picks the item to quiz; biased toward weak items when adaptive is on. */
   pickItem: ItemPicker;
+  /** Enabled filter groups; empty/unused for games without `filterGroups`. */
+  enabledGroups: ReadonlySet<string>;
 }
 
 export interface QuizQuestion {
@@ -31,6 +33,8 @@ export interface Game {
   description: string;
   emoji: string;
   category: Category;
+  /** Ordered filter-group labels; when set the sidebar shows a toggle per group. */
+  filterGroups?: string[];
   /** Returns a fresh randomized question each call. */
   makeQuestion: (config: QuizConfig) => QuizQuestion;
 }

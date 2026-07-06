@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GAMES, getGame } from "./games/index.ts";
+import { GAMES, getGame } from "./games/index.tsx";
 import { QuizGame } from "./components/QuizGame.tsx";
 import type { Category } from "./lib/types.ts";
 
@@ -28,7 +28,7 @@ export function App() {
   const game = getGame(route);
 
   if (game) {
-    return <QuizGame game={game} onExit={() => go("")} />;
+    return <QuizGame key={game.id} game={game} onExit={() => go("")} />;
   }
 
   return (
@@ -63,7 +63,7 @@ export function App() {
       </div>
 
       <footer className="mt-12 text-center text-xs text-neutral-600">
-        Frontend-only · add a game in <code className="text-neutral-400">src/games/index.ts</code>
+        Frontend-only · add a game in <code className="text-neutral-400">src/games/index.tsx</code>
       </footer>
     </div>
   );
