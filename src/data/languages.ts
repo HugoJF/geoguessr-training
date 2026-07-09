@@ -174,7 +174,7 @@ export const LANGUAGES: LanguageClue[] = [
     phrases: [
       "ul. Marszałkowska", "ZAKAZ WJAZDU", "PRZEJŚCIE DLA PIESZYCH", "WYJŚCIE EWAKUACYJNE",
       "UWAGA — ROBOTY DROGOWE", "SKLEP SPOŻYWCZY", "PARKING PŁATNY", "RUCH JEDNOKIERUNKOWY",
-      "DWORZEC GŁÓWNY", "NA SPRZEDAŻ", "APTEKA CAŁODOBOWA", "PIEKARNIA", "NIEBEZPIECZEŃSTWO",
+      "DWORZEC GŁÓWNY", "NA SPRZEDAŻ", "APTEKA CAŁODOBOWA", "ŚWIEŻE PIECZYWO", "NIEBEZPIECZEŃSTWO",
     ],
     note: "Slashed ł is unique; ż ź ś ć ń ą ę. Clusters sz cz rz szcz. 'ulica/ul.' = street.",
   },
