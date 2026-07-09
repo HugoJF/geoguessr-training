@@ -13,6 +13,23 @@
  * Croatian; leans on prepovedano/izhod/naprodaj) and Indonesian (plain Latin;
  * leans on dilarang/jalan).
  */
+import {
+  ARABIC_FONT,
+  ARMENIAN_FONT,
+  BENGALI_FONT,
+  CHINESE_FONT,
+  DEVANAGARI_FONT,
+  GEORGIAN_FONT,
+  HEBREW_FONT,
+  JAPANESE_FONT,
+  KHMER_FONT,
+  KOREAN_FONT,
+  LAO_FONT,
+  SINHALA_FONT,
+  TAMIL_FONT,
+  THAI_FONT,
+} from "./fonts.ts";
+
 export type LanguageGroup =
   | "Romance"
   | "Germanic"
@@ -28,6 +45,8 @@ export interface LanguageClue {
   group: LanguageGroup;
   countries: string[];
   phrases: string[];
+  /** Script-specific font-family for the phrase; omit to inherit BASE_FONT_STACK. */
+  font?: string;
   note: string;
 }
 
@@ -376,6 +395,7 @@ export const LANGUAGES: LanguageClue[] = [
       "بلدية", "انتبه", "مفتوح", "محطة", "للبيع",
       "طريق مغلق", "ممنوع الدخول", "مخبز",
     ],
+    font: ARABIC_FONT,
     note: "Flowing connected cursive with dots above/below, right-to-left. No extra Persian letters پ چ ژ گ.",
   },
   {
@@ -387,6 +407,7 @@ export const LANGUAGES: LanguageClue[] = [
       "עירייה", "זהירות", "פתוח", "תחנה", "למכירה",
       "סכנה", "אין כניסה", "מאפייה",
     ],
+    font: HEBREW_FONT,
     note: "Blocky letters that sit on the baseline, right-to-left, no connecting cursive. 'רחוב' = street.",
   },
   {
@@ -398,6 +419,7 @@ export const LANGUAGES: LanguageClue[] = [
       "شهرداری", "احتیاط", "باز", "ایستگاه", "فروشی",
       "گذرگاه پیاده", "ورود ممنوع", "نانوایی",
     ],
+    font: ARABIC_FONT,
     note: "Arabic script PLUS Persian-only letters پ چ ژ گ. 'خیابان' = street. Vocabulary differs from Arabic.",
   },
   {
@@ -409,6 +431,7 @@ export const LANGUAGES: LanguageClue[] = [
       "नगर पालिका", "सावधान", "खुला", "स्टेशन", "बिक्री हेतु",
       "खतरा", "प्रवेश निषेध", "बेकरी",
     ],
+    font: DEVANAGARI_FONT,
     note: "Devanagari: horizontal top bar connecting letters. 'सड़क' = road. Same script as Nepali/Marathi.",
   },
   {
@@ -420,6 +443,7 @@ export const LANGUAGES: LanguageClue[] = [
       "পৌরসভা", "সতর্ক", "খোলা", "স্টেশন", "বিক্রয়",
       "বিপদ", "প্রবেশ নিষেধ", "বেকারি",
     ],
+    font: BENGALI_FONT,
     note: "Top bar like Devanagari but more curved/triangular forms. 'রাস্তা' = road.",
   },
   {
@@ -431,6 +455,7 @@ export const LANGUAGES: LanguageClue[] = [
       "நகராட்சி", "எச்சரிக்கை", "திறந்துள்ளது", "நிலையம்", "விற்பனைக்கு",
       "ஆபத்து", "நுழைவு தடை", "பேக்கரி",
     ],
+    font: TAMIL_FONT,
     note: "Rounded with loops and no top bar. 'தெரு' = street. South India, Sri Lanka, Singapore.",
   },
   {
@@ -442,6 +467,7 @@ export const LANGUAGES: LanguageClue[] = [
       "නගර සභාව", "අවවාදයයි", "විවෘතයි", "ස්ථානය", "විකිණීමට",
       "අනතුර", "ඇතුල්වීම තහනම්", "බේකරිය",
     ],
+    font: SINHALA_FONT,
     note: "Very round, ornate, curly letters. 'පාර' = road. Unique to Sri Lanka.",
   },
 
@@ -455,6 +481,7 @@ export const LANGUAGES: LanguageClue[] = [
       "パン屋", "売り物件", "ようこそ", "立ち入り禁止", "駐車場あり",
       "ラーメン", "さくら通り", "たばこ",
     ],
+    font: JAPANESE_FONT,
     note: "Mix of kanji with hiragana (curvy) and katakana (angular). The kana mixed in = Japanese, not Chinese.",
   },
   {
@@ -466,6 +493,7 @@ export const LANGUAGES: LanguageClue[] = [
       "시청", "주의", "영업중", "역", "매매",
       "위험", "진입금지", "빵집",
     ],
+    font: KOREAN_FONT,
     note: "Hangul: square blocks built from circles (ㅇ) and lines. The rings are the tell.",
   },
   {
@@ -477,6 +505,7 @@ export const LANGUAGES: LanguageClue[] = [
       "禁止通行", "面包店", "请勿吸烟", "收银台", "医院",
       "儿童优先", "欢迎光临", "购物中心",
     ],
+    font: CHINESE_FONT,
     note: "Dense square characters with NO kana mixed in → Chinese, not Japanese. Taiwan uses traditional forms.",
   },
   {
@@ -488,6 +517,7 @@ export const LANGUAGES: LanguageClue[] = [
       "เทศบาล", "ระวัง", "เปิด", "สถานี", "ขาย",
       "อันตราย", "ห้ามเข้า", "ร้านเบเกอรี่",
     ],
+    font: THAI_FONT,
     note: "Loops and curls with tall spikes, no spaces between words. 'ถนน' = road.",
   },
   {
@@ -499,6 +529,7 @@ export const LANGUAGES: LanguageClue[] = [
       "ເທດສະບານ", "ລະວັງ", "ເປີດ", "ສະຖານີ", "ຂາຍ",
       "ອັນຕະລາຍ", "ຫ້າມເຂົ້າ", "ຮ້ານເບເກີຣີ",
     ],
+    font: LAO_FONT,
     note: "Like Thai but rounder, simpler, fewer spikes. 'ຖະໜົນ' = road.",
   },
   {
@@ -510,6 +541,7 @@ export const LANGUAGES: LanguageClue[] = [
       "សាលាក្រុង", "ប្រយ័ត្ន", "បើក", "ស្ថានីយ៍", "លក់",
       "គ្រោះថ្នាក់", "ហាមចូល", "ហាងនំបុ័ង",
     ],
+    font: KHMER_FONT,
     note: "Tall, ornate, with lots of subscript curls hanging below. 'ផ្លូវ' = road. Unique to Cambodia.",
   },
   {
@@ -545,6 +577,7 @@ export const LANGUAGES: LanguageClue[] = [
       "მერია", "ყურადღება", "ღიაა", "სადგური", "იყიდება",
       "საფრთხე", "შესვლა აკრძალულია", "საცხობი",
     ],
+    font: GEORGIAN_FONT,
     note: "Rounded, looping, no capital letters. 'ქუჩა' = street. Its own alphabet, unique to Georgia.",
   },
   {
@@ -556,6 +589,7 @@ export const LANGUAGES: LanguageClue[] = [
       "ՔԱՂԱՔԱՊԵՏԱՐԱՆ", "ՈՒՇԱԴՐՈՒԹՅՈՒՆ", "ԲԱՑ Է", "ԿԱՅԱՐԱՆ", "ՎԱՃԱՌՎՈՒՄ Է",
       "ՎՏԱՆԳ", "ՄՈՒՏՔՆ ԱՐԳԵԼՎԱԾ Է", "ՀԱՑԱԲՈՒԼԿԵՂԵՆ",
     ],
+    font: ARMENIAN_FONT,
     note: "Angular letters with hooks and right-angles. 'ՓՈՂՈՑ' = street. Its own alphabet, unique to Armenia.",
   },
 ];

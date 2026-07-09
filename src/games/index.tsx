@@ -8,6 +8,7 @@ import { DOMAINS } from "../data/domains.ts";
 import { DRIVING } from "../data/driving.ts";
 import { CYRILLIC } from "../data/cyrillic.ts";
 import { LANGUAGES, LANGUAGE_GROUPS } from "../data/languages.ts";
+import { BASE_FONT_STACK } from "../data/fonts.ts";
 
 const dddGame: Game = {
   id: "ddd",
@@ -170,7 +171,14 @@ const languageGame: Game = {
     return {
       itemKey: q.language,
       promptLabel: "Which language is this sign?",
-      prompt: <span className="text-3xl font-bold leading-snug break-words">{phrase}</span>,
+      prompt: (
+        <span
+          className="text-3xl font-bold leading-snug break-words"
+          style={{ fontFamily: q.font ?? BASE_FONT_STACK }}
+        >
+          {phrase}
+        </span>
+      ),
       options: buildOptions(
         label(q),
         pool.map(label),

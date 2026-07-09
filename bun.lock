@@ -5,6 +5,17 @@
     "": {
       "name": "geoguessr-training",
       "dependencies": {
+        "@fontsource/noto-sans-arabic": "^5.2.10",
+        "@fontsource/noto-sans-armenian": "^5.2.8",
+        "@fontsource/noto-sans-bengali": "^5.2.11",
+        "@fontsource/noto-sans-devanagari": "^5.2.8",
+        "@fontsource/noto-sans-georgian": "^5.2.8",
+        "@fontsource/noto-sans-hebrew": "^5.2.8",
+        "@fontsource/noto-sans-khmer": "^5.2.8",
+        "@fontsource/noto-sans-lao": "^5.2.8",
+        "@fontsource/noto-sans-sinhala": "^5.2.10",
+        "@fontsource/noto-sans-tamil": "^5.2.7",
+        "@fontsource/noto-sans-thai": "^5.2.8",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
       },
@@ -109,6 +120,28 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.25.12", "", { "os": "win32", "cpu": "ia32" }, "sha512-HkqnmmBoCbCwxUKKNPBixiWDGCpQGVsrQfJoVGYLPT41XWF8lHuE5N6WhVia2n4o5QK5M4tYr21827fNhi4byQ=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.12", "", { "os": "win32", "cpu": "x64" }, "sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA=="],
+
+    "@fontsource/noto-sans-arabic": ["@fontsource/noto-sans-arabic@5.2.10", "", {}, "sha512-Hgj3NwQJ0NquIADW3hFboFjsts4UvEOJQ8tOX0bhQZgpNKHsMawjv/1SZnq0QvRbP6efHTZM/A1k7tdy9S6sbA=="],
+
+    "@fontsource/noto-sans-armenian": ["@fontsource/noto-sans-armenian@5.2.8", "", {}, "sha512-aOFFNMHbTDJxXktda/dwK3fc+Li22OflVnvbMzRE0GaPYeFjUwU7u6/BD0BX0EkdWnCeBnaL8vR94ZLt8Rio2Q=="],
+
+    "@fontsource/noto-sans-bengali": ["@fontsource/noto-sans-bengali@5.2.11", "", {}, "sha512-sDCKgC1u83/7JwulfgyvCDab97OkN375RDeGcXtvmI2Vx9ZY5mAcjb4qBtZbv53sL8i+jLawsWvZQVs4zCNkug=="],
+
+    "@fontsource/noto-sans-devanagari": ["@fontsource/noto-sans-devanagari@5.2.8", "", {}, "sha512-UyCfyCEX2+QVUDQWb9y2MRTg1O3bTcXixzD2xQfapFOtw4hpH1rfDIbTXulZ4SUEsbB/wWeyyEL9b93Nmwd6Gg=="],
+
+    "@fontsource/noto-sans-georgian": ["@fontsource/noto-sans-georgian@5.2.8", "", {}, "sha512-oylTMjvNxSZCqbq+0aCto5rjI14Je55scC04DgxQwpReN+ZXe3Kxpv4ATfb61apvlJZkeqTPSazVoRD+rJhbMg=="],
+
+    "@fontsource/noto-sans-hebrew": ["@fontsource/noto-sans-hebrew@5.2.8", "", {}, "sha512-FN/GDpE709JQN5f7vmqlbIwz2/vAM6ZnXqRsw47Piq731hvti55V/FLbyU2RWUvlis16ezPf0r+zKTjfdeXF/g=="],
+
+    "@fontsource/noto-sans-khmer": ["@fontsource/noto-sans-khmer@5.2.8", "", {}, "sha512-nIuy718KK0thk5hu/plNdJvmoA3AElDZMLidYm2ju5TzmowLAS3OoCMXMneLmek2gGlJQmOtsZtF78OQ5orwQw=="],
+
+    "@fontsource/noto-sans-lao": ["@fontsource/noto-sans-lao@5.2.8", "", {}, "sha512-Ge85hNE9YetzzRjPBBWKhQKez3t2mtYSM1N3B7sEIkTQn7sn9wX2KzfFb8zJ0gXp47CRb32Kw3A7LOoeiFua1g=="],
+
+    "@fontsource/noto-sans-sinhala": ["@fontsource/noto-sans-sinhala@5.2.10", "", {}, "sha512-vH62cX7gcoDCgV6DJixwz1m43ynKRz3u5wbP8QdXoLNPogi8n1bW8+mLxhGHb3bGRA9DGG3IL/3cJEeLkta0RA=="],
+
+    "@fontsource/noto-sans-tamil": ["@fontsource/noto-sans-tamil@5.2.7", "", {}, "sha512-9ORanbdYAADV8ZC4g1l1GeVllDQBZ04GGqkki7H0LlO3JIOVA4acFQYKJE4PB0y/qGa6fmnwk8mXy+OwJm9iGA=="],
+
+    "@fontsource/noto-sans-thai": ["@fontsource/noto-sans-thai@5.2.8", "", {}, "sha512-HUQAxOzclod9PXQx4uMoGRAsor+64snW91QuBg39jT9lbsp7jJx1i3jAtHPJ7mQxHEHnhRjNp54fb8GqPPC6zg=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 
