@@ -5,6 +5,13 @@
  * `note` focuses on how to tell a language apart from its look-alikes and the
  * country tell (diacritics, the local word for "street", etc). `group` drives
  * the sidebar filters so players can drill a subset.
+ *
+ * The game shows ONE random phrase, so every phrase must be identifiable on its
+ * own: each carries a letter/diacritic/digraph the language is known for (ł ż,
+ * ő ű, ç ë, doubled consonants, ij, etc). Two languages have no exclusive
+ * letter and instead rely on signature vocabulary — Slovenian (shares č š ž with
+ * Croatian; leans on prepovedano/izhod/naprodaj) and Indonesian (plain Latin;
+ * leans on dilarang/jalan).
  */
 export type LanguageGroup =
   | "Romance"
@@ -31,10 +38,10 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["Spain", "Mexico", "Argentina", "Colombia", "Chile", "Peru"],
     phrases: [
-      "CEDA EL PASO", "PROHIBIDO APARCAR", "CALLE MAYOR", "PLAZA DE ESPAÑA",
-      "DIRECCIÓN PROHIBIDA", "SE VENDE PISO", "FARMACIA DE GUARDIA", "OBRAS EN LA VÍA",
-      "PELIGRO DE MUERTE", "SALIDA DE EMERGENCIA", "ESTACIÓN DE AUTOBUSES",
-      "PROHIBIDO EL PASO", "AYUNTAMIENTO DE SEVILLA",
+      "DIRECCIÓN PROHIBIDA", "ESTACIÓN DE AUTOBUSES", "PLAZA DE ESPAÑA", "NIÑOS JUGANDO",
+      "ÁREA DE DESCANSO", "PRECAUCIÓN: OBRAS", "SÓLO CARGA Y DESCARGA",
+      "AVENIDA DE ANDALUCÍA", "ATENCIÓN AL TREN", "VÍA PÚBLICA",
+      "PANADERÍA", "CARNICERÍA", "CERVECERÍA",
     ],
     note: "ñ and inverted ¡ ¿ are unique. 'Calle' = street. vs Portuguese: no ção/nh/lh; vs Italian: no doubled consonants.",
   },
@@ -43,10 +50,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["Portugal", "Brazil", "Angola", "Mozambique"],
     phrases: [
-      "RUA DA LIBERDADE", "ESTACIONAMENTO PROIBIDO", "PROIBIDO ESTACIONAR",
-      "SAÍDA DE EMERGÊNCIA", "PASSAGEM DE PEÕES", "FAIXA DE PEDESTRES",
-      "CÂMARA MUNICIPAL", "OBRAS NA VIA", "PERIGO DE MORTE",
-      "ESTAÇÃO DE COMBOIOS", "VENDE-SE", "PADARIA", "TALHO",
+      "ESTAÇÃO DE COMBOIOS", "SAÍDA DE EMERGÊNCIA", "CÂMARA MUNICIPAL", "PASSAGEM DE PEÕES",
+      "CIRCULAÇÃO PROIBIDA", "SENTIDO ÚNICO", "NÃO ESTACIONAR", "ATENÇÃO ÀS OBRAS",
+      "INFORMAÇÕES", "PÃO QUENTE", "AÇOUGUE", "FARMÁCIA", "PENSÃO",
     ],
     note: "ã õ ç and '-ção' endings; nh/lh digraphs. 'Rua' = street. vs Spanish: no ñ, has ~ tildes.",
   },
@@ -55,10 +61,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["France", "Belgium", "Switzerland", "Canada (Québec)", "Senegal"],
     phrases: [
-      "RUE DE LA PAIX", "STATIONNEMENT INTERDIT", "CÉDEZ LE PASSAGE",
-      "SORTIE DE SECOURS", "PASSAGE PIÉTON", "TOUTES DIRECTIONS", "SENS INTERDIT",
-      "À VENDRE", "BOULANGERIE-PÂTISSERIE", "GARE SNCF", "MAIRIE",
-      "PROPRIÉTÉ PRIVÉE", "CENTRE-VILLE",
+      "CÉDEZ LE PASSAGE", "PASSAGE PIÉTON", "DÉFENSE DE STATIONNER", "PRIORITÉ À DROITE",
+      "DÉVIATION", "À VENDRE", "PROPRIÉTÉ PRIVÉE", "BOULANGERIE-PÂTISSERIE",
+      "HÔTEL DE VILLE", "CHAUSSÉE DÉFORMÉE", "ARRÊT DE BUS", "PÉAGE", "RUE PIÉTONNE",
     ],
     note: "é è ê ç à, apostrophes (l'/d'). 'Rue' = street, 'Boulangerie'. Accents lean grave/circumflex, not tildes.",
   },
@@ -67,10 +72,10 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["Italy", "San Marino", "Switzerland (Ticino)"],
     phrases: [
-      "VIA ROMA", "DIVIETO DI SOSTA", "DARE PRECEDENZA", "USCITA DI SICUREZZA",
-      "SENSO UNICO", "LAVORI IN CORSO", "ATTRAVERSAMENTO PEDONALE",
-      "ZONA TRAFFICO LIMITATO", "STAZIONE CENTRALE", "VENDESI", "MUNICIPIO",
-      "PANIFICIO", "TABACCHERIA",
+      "USCITA DI SICUREZZA", "ATTRAVERSAMENTO PEDONALE", "ZONA TRAFFICO LIMITATO",
+      "PARCHEGGIO VIETATO", "STRADA DISSESTATA", "CADUTA MASSI", "STAZIONE FERROVIARIA",
+      "FERMATA DELL'AUTOBUS", "MACELLERIA", "PASTICCERIA", "BIGLIETTERIA",
+      "TABACCHERIA", "SOCCORSO PUBBLICO",
     ],
     note: "Doubled consonants (tt, zz, ll), '-zione' endings, 'Via' = street. Almost no accents except è à ò.",
   },
@@ -79,10 +84,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["Romania", "Moldova"],
     phrases: [
-      "STRADA VICTORIEI", "PARCARE INTERZISĂ", "CEDEAZĂ TRECEREA",
-      "IEȘIRE DE URGENȚĂ", "TRECERE DE PIETONI", "SENS UNIC", "INTRAREA INTERZISĂ",
-      "DE VÂNZARE", "FARMACIE NON-STOP", "GARĂ", "PRIMĂRIA",
-      "BRUTĂRIE", "MĂCELĂRIE",
+      "PARCARE INTERZISĂ", "CEDEAZĂ TRECEREA", "IEȘIRE DE URGENȚĂ", "INTRAREA INTERZISĂ",
+      "STRADĂ ÎNCHISĂ", "DRUM ÎN LUCRU", "ȘCOALĂ", "DE VÂNZARE",
+      "FARMACIE DESCHISĂ", "GARĂ", "PRIMĂRIA", "BRUTĂRIE", "MĂCELĂRIE",
     ],
     note: "ă â î ș ț (comma-below ș ț). Romance vocab with Slavic loanwords. 'Strada' = street.",
   },
@@ -91,9 +95,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Romance",
     countries: ["Spain (Catalonia)", "Andorra"],
     phrases: [
-      "CARRER MAJOR", "PROHIBIT APARCAR", "CEDIU EL PAS", "SORTIDA D'EMERGÈNCIA",
-      "PAS DE VIANANTS", "PLAÇA DE CATALUNYA", "ES VEN", "ESTACIÓ DE TREN",
-      "AJUNTAMENT", "FORN DE PA", "CARNISSERIA", "OBERT", "PERILL",
+      "SORTIDA D'EMERGÈNCIA", "PLAÇA DE CATALUNYA", "ESTACIÓ DE TREN", "DIRECCIÓ PROHIBIDA",
+      "ATENCIÓ AL TREN", "INFORMACIÓ", "PARADA D'AUTOBÚS", "HORARI D'ATENCIÓ",
+      "PLAÇA MAJOR", "AVINGUDA DE FRANÇA", "FARMÀCIA", "ESGLÉSIA", "ESTACIÓ D'AUTOBUSOS",
     ],
     note: "Middle-dot l·l is unique, ç and grave accents. 'Carrer' = street, '-ció' endings. Looks between Spanish & French.",
   },
@@ -104,9 +108,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Germanic",
     countries: ["Germany", "Austria", "Switzerland"],
     phrases: [
-      "HAUPTSTRASSE", "PARKEN VERBOTEN", "VORFAHRT GEWÄHREN", "NOTAUSGANG",
-      "FUSSGÄNGERZONE", "EINBAHNSTRASSE", "EINFAHRT FREIHALTEN", "ZU VERKAUFEN",
-      "BAUSTELLE", "HAUPTBAHNHOF", "RATHAUS", "BÄCKEREI", "METZGEREI",
+      "VORFAHRT GEWÄHREN", "FUßGÄNGERZONE", "EINBAHNSTRAßE", "HAUPTSTRAßE",
+      "FUßGÄNGERÜBERWEG", "GEÖFFNET", "STRAßENBAHN", "ÜBERHOLEN VERBOTEN",
+      "NÄCHSTE AUSFAHRT", "BÄCKEREI", "MÜLLABFUHR", "GESCHÄFT ZU VERMIETEN", "GRÜNER PFEIL",
     ],
     note: "ä ö ü ß, very long compound words. '-straße/-strasse' = street. Switzerland drops ß for ss.",
   },
@@ -115,8 +119,8 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Germanic",
     countries: ["Netherlands", "Belgium (Flanders)", "Suriname"],
     phrases: [
-      "HOOFDSTRAAT", "VERBODEN TE PARKEREN", "VOORRANG VERLENEN", "NOODUITGANG",
-      "VOETGANGERSGEBIED", "EENRICHTINGSVERKEER", "INRIT VRIJHOUDEN", "TE KOOP",
+      "HOOFDSTRAAT", "DOODLOPENDE WEG", "VOORRANG VERLENEN", "NOODUITGANG",
+      "OPENBAAR VERVOER", "EENRICHTINGSVERKEER", "INRIT VRIJHOUDEN", "TE KOOP",
       "WEGWERKZAAMHEDEN", "CENTRAAL STATION", "GEMEENTEHUIS", "BAKKERIJ", "SLAGERIJ",
     ],
     note: "Double vowels aa/ee/oo/uu, 'ij' digraph, '-straat' = street. Looks like German but no ß/umlauts.",
@@ -126,9 +130,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Germanic",
     countries: ["Sweden", "Finland (coastal)"],
     phrases: [
-      "STORGATAN", "PARKERING FÖRBJUDEN", "LÄMNA FÖRETRÄDE", "NÖDUTGÅNG",
-      "GÅGATA", "INFART FÖRBJUDEN", "VÄGARBETE", "TILL SALU",
-      "CENTRALSTATION", "STADSHUS", "VÅRDCENTRAL", "ÖPPETTIDER", "KÖTTAFFÄR",
+      "PARKERING FÖRBJUDEN", "LÄMNA FÖRETRÄDE", "NÖDUTGÅNG", "GÅGATA",
+      "INFART FÖRBJUDEN", "VÄGARBETE", "HÅLLPLATS", "AVSMALNANDE VÄG",
+      "VÅRDCENTRAL", "ÖPPETTIDER", "KÖTTAFFÄR", "STÄNGT", "ÅTERVINNING",
     ],
     note: "å ä ö. '-gatan/-vägen' = street. vs Danish/Norwegian: uses ä ö (not æ ø), and 'och'.",
   },
@@ -137,9 +141,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Germanic",
     countries: ["Norway"],
     phrases: [
-      "STORGATA", "INNKJØRING FORBUDT", "VIKEPLIKT", "NØDUTGANG",
-      "GÅGATE", "ALL STANS FORBUDT", "VEIARBEID", "TIL SALGS",
-      "GLATT VEIBANE", "SENTRALSTASJON", "KOMMUNEHUSET", "ÅPNINGSTIDER", "SLAKTERI",
+      "INNKJØRING FORBUDT", "ENVEISKJØRING", "GLATT KJØREBANE", "NØDUTGANG",
+      "GÅGATE", "KJØRING FORBUDT", "MØLLERGATA", "RØDT LYS",
+      "KJØPESENTER", "KJØTTBUTIKK", "ÅPNINGSTIDER", "SLUTT PÅ MOTORVEG", "GÅRDSPLASS",
     ],
     note: "æ ø å (like Danish). '-gata/-veien' = street. vs Danish: 'ikke' & harder spellings; vs Swedish: æ ø not ä ö.",
   },
@@ -148,9 +152,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Germanic",
     countries: ["Denmark"],
     phrases: [
-      "HOVEDGADE", "PARKERING FORBUDT", "HOLD TILBAGE", "NØDUDGANG",
-      "GÅGADE", "INDKØRSEL FORBUDT", "VEJARBEJDE", "TIL SALG",
-      "FODGÆNGEROVERGANG", "HOVEDBANEGÅRD", "ÅBNINGSTIDER", "BAGERI", "SLAGTER",
+      "INDKØRSEL FORBUDT", "NØDUDGANG", "GÅGADE", "FODGÆNGEROVERGANG",
+      "HOVEDBANEGÅRD", "ÅBNINGSTIDER", "VEJEN ER SPÆRRET", "KØRSEL FORBUDT",
+      "RØDT LYS", "KØBMAND", "KØDMARKED", "BRØDUDSALG", "FÆRDSEL FORBUDT",
     ],
     note: "æ ø å (like Norwegian). '-gade/-vej' = street. Soft consonants: 'gade' not 'gata', 'øl' beer.",
   },
@@ -160,7 +164,7 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Iceland"],
     phrases: [
       "AUSTURSTRÆTI", "BÍLASTÆÐI BÖNNUÐ", "BIÐSKYLDA", "NEYÐARÚTGANGUR",
-      "GANGBRAUT", "EINSTEFNA", "ÞJÓÐVEGUR", "TIL SÖLU",
+      "GÖNGUGATA", "AKSTUR BANNAÐUR", "ÞJÓÐVEGUR", "TIL SÖLU",
       "MIÐBÆR", "RÁÐHÚS", "OPIÐ", "BAKARÍ", "KJÖTBÚÐ",
     ],
     note: "þ (thorn) and ð (eth) are the giveaway — no other living language uses both. Accented vowels á é í ó ú.",
@@ -172,8 +176,8 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Slavic (Latin)",
     countries: ["Poland"],
     phrases: [
-      "ul. Marszałkowska", "ZAKAZ WJAZDU", "PRZEJŚCIE DLA PIESZYCH", "WYJŚCIE EWAKUACYJNE",
-      "UWAGA — ROBOTY DROGOWE", "SKLEP SPOŻYWCZY", "PARKING PŁATNY", "RUCH JEDNOKIERUNKOWY",
+      "ul. Marszałkowska", "ZAKAZ ZATRZYMYWANIA SIĘ", "PRZEJŚCIE DLA PIESZYCH", "WYJŚCIE EWAKUACYJNE",
+      "ŚLISKA JEZDNIA", "SKLEP SPOŻYWCZY", "PARKING PŁATNY", "DROGA ZAMKNIĘTA",
       "DWORZEC GŁÓWNY", "NA SPRZEDAŻ", "APTEKA CAŁODOBOWA", "ŚWIEŻE PIECZYWO", "NIEBEZPIECZEŃSTWO",
     ],
     note: "Slashed ł is unique; ż ź ś ć ń ą ę. Clusters sz cz rz szcz. 'ulica/ul.' = street.",
@@ -195,7 +199,7 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Slovakia"],
     phrases: [
       "HLAVNÁ ULICA", "ZÁKAZ PARKOVANIA", "DAJ PREDNOSŤ V JAZDE", "NÚDZOVÝ VÝCHOD",
-      "PRIECHOD PRE CHODCOV", "ZÁKAZ VJAZDU", "JEDNOSMERNÁ PREMÁVKA", "NA PREDAJ",
+      "ŠMYKĽAVÁ VOZOVKA", "ZÁKAZ VJAZDU", "JEDNOSMERNÁ PREMÁVKA", "ZÁKAZ ZASTAVENIA",
       "ŽELEZNIČNÁ STANICA", "MESTSKÝ ÚRAD", "PEKÁREŇ", "LEKÁREŇ", "MÄSIARSTVO",
     ],
     note: "ä ô ľ ĺ ŕ mark it as Slovak, not Czech. 'ulica' = street. Very close to Czech otherwise.",
@@ -205,10 +209,10 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Slavic (Latin)",
     countries: ["Croatia", "Bosnia and Herzegovina"],
     phrases: [
-      "ZABRANJENO PARKIRANJE", "ZABRANJENO ZAUSTAVLJANJE", "USTUPI PRVENSTVO",
-      "IZLAZ U SLUČAJU OPASNOSTI", "PJEŠAČKI PRIJELAZ", "JEDNOSMJERNA ULICA",
-      "ZABRANJEN ULAZ", "PRODAJE SE", "GRADSKA VIJEĆNICA", "KOLODVOR",
-      "LJEKARNA", "PEKARNICA", "MESNICA",
+      "GRADSKA VIJEĆNICA", "OPĆINA", "VOĆE I POVRĆE", "CESTA S PREDNOŠĆU",
+      "CVJEĆARNICA", "NAPLATNE KUĆICE", "SLASTIČARNICA", "ŽELJEZNIČKI KOLODVOR",
+      "DEŽURNA LJEKARNA", "PJEŠAČKI PRIJELAZ", "IZLAZ U SLUČAJU OPASNOSTI",
+      "PARKIRALIŠTE", "ZRAČNA LUKA",
     ],
     note: "č ć ž š and crossed đ. 'ulica' = street. vs Slovenian: has ć and đ.",
   },
@@ -289,9 +293,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Other European",
     countries: ["Finland"],
     phrases: [
-      "PYSÄKÖINTI KIELLETTY", "VÄISTÄMISVELVOLLISUUS", "HÄTÄULOSKÄYNTI", "SUOJATIE",
-      "YKSISUUNTAINEN KATU", "AJO KIELLETTY", "TIETYÖ", "MYYTÄVÄNÄ",
-      "RAUTATIEASEMA", "KAUPUNGINTALO", "AVOINNA", "LEIPOMO", "APTEEKKI",
+      "PYSÄKÖINTI KIELLETTY", "VÄISTÄMISVELVOLLISUUS", "HÄTÄULOSKÄYNTI", "MYYTÄVÄNÄ",
+      "KÄVELYKATU", "LÄPIAJO KIELLETTY", "TYÖMAA", "PYSÄKKI",
+      "PÄIVYSTYS", "AVOINNA JOKA PÄIVÄ", "YÖAPTEEKKI", "PÄÄTIE", "LÄHIKAUPPA",
     ],
     note: "ä ö and lots of doubled letters (kk, aa, ää), very long words. 'katu/tie' = street. No å in body text.",
   },
@@ -300,9 +304,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Other European",
     countries: ["Estonia"],
     phrases: [
-      "PARKIMINE KEELATUD", "ANNA TEED", "SISSESÕIT KEELATUD", "VARUVÄLJAPÄÄS",
-      "ÜHESUUNALINE TEE", "TEETÖÖD", "MÜÜA", "RAUDTEEJAAM",
-      "RAEKODA", "AVATUD", "PAGARIÄRI", "TÄNAV", "LIHAPOOD",
+      "SISSESÕIT KEELATUD", "SÕIDUPLAAN", "PÖÖRE KEELATUD", "VARUVÄLJAPÄÄS",
+      "ÜHESUUNALINE TEE", "TEETÖÖD", "MÜÜA", "TÄNAV SULETUD",
+      "VÄLJAPÄÄS", "TÖÖPÄEVAD", "ÖÖAPTEEK", "PAGARIÄRI", "ÜHISTRANSPORT",
     ],
     note: "õ ä ö ü — the õ is the tell vs Finnish. 'tänav' = street. Shorter words than Finnish.",
   },
@@ -311,8 +315,8 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Other European",
     countries: ["Hungary"],
     phrases: [
-      "FŐ UTCA", "PARKOLNI TILOS", "ELSŐBBSÉGADÁS KÖTELEZŐ", "VÉSZKIJÁRAT",
-      "GYALOGÁTKELŐHELY", "KÖTELEZŐ HALADÁSI IRÁNY", "BEHAJTANI TILOS", "ELADÓ",
+      "FŐ UTCA", "VÁRAKOZNI TILOS", "ELSŐBBSÉGADÁS KÖTELEZŐ", "VÉSZKIJÁRAT",
+      "GYALOGÁTKELŐHELY", "KÖTELEZŐ HALADÁSI IRÁNY", "ZSÁKUTCA", "ELADÓ",
       "VASÚTÁLLOMÁS", "VÁROSHÁZA", "NYITVA", "PÉKSÉG", "GYÓGYSZERTÁR",
     ],
     note: "Double-acute ő ű are unique. Digraphs sz cs gy ny zs. 'utca' = street, 'TILOS' = forbidden.",
@@ -322,9 +326,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Other European",
     countries: ["Turkey", "Cyprus (North)"],
     phrases: [
-      "PARK YASAK", "YOL VER", "ACİL ÇIKIŞ", "YAYA GEÇİDİ",
-      "TEK YÖN", "GİRİLMEZ", "YOL YAPIM ÇALIŞMASI", "SATILIK",
-      "İSTASYON", "BELEDİYE", "AÇIK", "FIRIN", "ECZANE",
+      "PARK YASAĞI", "YOL YAPIM ÇALIŞMASI", "ACİL ÇIKIŞ", "YAYA GEÇİDİ",
+      "TEK YÖN", "GİRİLMEZ", "DİKKAT", "SATILIK DAİRE",
+      "İSTASYON", "BELEDİYE", "NÖBETÇİ ECZANE", "AÇIK", "ÇIKMAZ SOKAK",
     ],
     note: "Dotless ı and dotted İ are the giveaway; ş ç ğ ö ü. 'Sokak/Cadde' = street, 'YASAK' = forbidden.",
   },
@@ -333,9 +337,9 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Other European",
     countries: ["Albania", "Kosovo", "North Macedonia"],
     phrases: [
-      "NDALOHET PARKIMI", "JEP PËRPARËSI", "DALJE EMERGJENCE", "VENDKALIM KËMBËSORËSH",
-      "RRUGA E DIBRËS", "NDALOHET HYRJA", "STACIONI I TRENIT", "SHITET",
-      "BASHKIA", "HAPUR", "FURRË BUKE", "FARMACI 24 ORË", "MISH I FRESKËT",
+      "RRUGA KRYESORE", "JEP PËRPARËSI", "DALJE EMERGJENCE", "VENDKALIM KËMBËSORËSH",
+      "RRUGA E DIBRËS", "KUJDES, PUNIME NË RRUGË", "STACIONI I AUTOBUSËVE", "SHITET",
+      "BASHKIA", "ORARI I PUNËS", "FURRË BUKE", "FARMACI 24 ORË", "MISH I FRESKËT",
     ],
     note: "ë and ç with digraphs dh gj ll rr sh th xh zh. 'Rruga' = street, 'NDALOHET' = forbidden.",
   },
@@ -345,8 +349,8 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Lithuania"],
     phrases: [
       "STOVĖTI DRAUDŽIAMA", "DUOK KELIĄ", "ATSARGINIS IŠĖJIMAS", "PĖSČIŲJŲ PERĖJA",
-      "VIENA KRYPTIS", "ĮVAŽIAVIMAS DRAUDŽIAMAS", "KELIO REMONTAS", "PARDUODAMA",
-      "GELEŽINKELIO STOTIS", "ROTUŠĖ", "ATIDARYTA", "KEPYKLA", "MĖSINĖ",
+      "PAGRINDINĖ GATVĖ", "ĮVAŽIAVIMAS DRAUDŽIAMAS", "KELIŲ REMONTAS", "IŠPARDAVIMAS",
+      "GELEŽINKELIO STOTIS", "ROTUŠĖ", "PARDUOTUVĖ", "VAISTINĖ", "MĖSINĖ",
     ],
     note: "Ogonek vowels ą ę į ų plus ū ė and č š ž. 'gatvė' = street, '-as/-is' endings everywhere.",
   },
@@ -356,7 +360,7 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Latvia"],
     phrases: [
       "STĀVĒT AIZLIEGTS", "DODIET CEĻU", "AVĀRIJAS IZEJA", "GĀJĒJU PĀREJA",
-      "VIENVIRZIENA IELA", "IEBRAUKT AIZLIEGTS", "CEĻA REMONTS", "PĀRDOD",
+      "GALVENĀ IELA", "APSTĀTIES AIZLIEGTS", "CEĻA REMONTS", "PĀRDOD",
       "DZELZCEĻA STACIJA", "RĀTSNAMS", "ATVĒRTS", "MAIZNĪCA", "GAĻAS VEIKALS",
     ],
     note: "Macron vowels ā ē ī ū plus ķ ļ ņ ģ (comma-below). 'iela' = street, 'AIZLIEGTS' = forbidden.",
@@ -528,7 +532,7 @@ export const LANGUAGES: LanguageClue[] = [
       "PENYEBERANGAN PEJALAN KAKI", "DILARANG MASUK", "ADA PERBAIKAN JALAN", "DIJUAL",
       "STASIUN KERETA", "KANTOR WALIKOTA", "BUKA", "TOKO ROTI", "PUSKESMAS",
     ],
-    note: "Plain Latin, no diacritics. 'Jalan/Jl.' = street, 'DILARANG' = forbidden. Malay is near-identical.",
+    note: "Plain Latin with NO special letters — that absence is itself the tell. 'Jalan/Jl.' = street, 'DILARANG' = forbidden. Malay is near-identical.",
   },
 
   // ---- Caucasus ----
