@@ -162,16 +162,21 @@ const languageGame: Game = {
     const pool = LANGUAGES.filter((l) => enabledGroups.has(l.group));
     const q = pickItem(pool, (l) => l.language);
     const phrase = sample(q.phrases);
+    const label = (l: (typeof LANGUAGES)[number]) => {
+      const shown = l.countries.slice(0, 3).join(", ");
+      const suffix = l.countries.length > 3 ? "…" : "";
+      return `${l.language} — ${shown}${suffix}`;
+    };
     return {
       itemKey: q.language,
       promptLabel: "Which language is this sign?",
       prompt: <span className="text-3xl font-bold leading-snug break-words">{phrase}</span>,
       options: buildOptions(
-        q.language,
-        pool.map((l) => l.language),
+        label(q),
+        pool.map(label),
         optionCount,
       ),
-      answer: q.language,
+      answer: label(q),
       explanation: (
         <>
           <strong>{q.language}</strong> — {q.countries.join(", ")}. {q.note}
