@@ -312,7 +312,7 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Hungary"],
     phrases: [
       "FŐ UTCA", "PARKOLNI TILOS", "ELSŐBBSÉGADÁS KÖTELEZŐ", "VÉSZKIJÁRAT",
-      "GYALOGÁTKELŐHELY", "EGYIRÁNYÚ UTCA", "BEHAJTANI TILOS", "ELADÓ",
+      "GYALOGÁTKELŐHELY", "KÖTELEZŐ HALADÁSI IRÁNY", "BEHAJTANI TILOS", "ELADÓ",
       "VASÚTÁLLOMÁS", "VÁROSHÁZA", "NYITVA", "PÉKSÉG", "GYÓGYSZERTÁR",
     ],
     note: "Double-acute ő ű are unique. Digraphs sz cs gy ny zs. 'utca' = street, 'TILOS' = forbidden.",
@@ -335,7 +335,7 @@ export const LANGUAGES: LanguageClue[] = [
     phrases: [
       "NDALOHET PARKIMI", "JEP PËRPARËSI", "DALJE EMERGJENCE", "VENDKALIM KËMBËSORËSH",
       "RRUGA E DIBRËS", "NDALOHET HYRJA", "STACIONI I TRENIT", "SHITET",
-      "BASHKIA", "HAPUR", "FURRË BUKE", "FARMACI", "MISHTORE",
+      "BASHKIA", "HAPUR", "FURRË BUKE", "FARMACI 24 ORË", "MISH I FRESKËT",
     ],
     note: "ë and ç with digraphs dh gj ll rr sh th xh zh. 'Rruga' = street, 'NDALOHET' = forbidden.",
   },
