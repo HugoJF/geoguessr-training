@@ -184,8 +184,8 @@ export const LANGUAGES: LanguageClue[] = [
     countries: ["Czechia"],
     phrases: [
       "HLAVNÍ ULICE", "ZÁKAZ PARKOVÁNÍ", "DEJ PŘEDNOST V JÍZDĚ", "NOUZOVÝ VÝCHOD",
-      "PŘECHOD PRO CHODCE", "ZÁKAZ VJEZDU", "POZOR VLAK", "NA PRODEJ",
-      "NÁDRAŽÍ", "OTEVŘENO", "PEKÁRNA", "LÉKÁRNA", "ŘEZNICTVÍ",
+      "PŘECHOD PRO CHODCE", "MĚSTSKÝ ÚŘAD", "OBJÍŽĎKA", "PĚŠÍ ZÓNA",
+      "NÁDRAŽÍ", "OTEVŘENO", "ZÁKAZ VJEZDU", "LÉKÁRNA", "ŘEZNICTVÍ",
     ],
     note: "ř is unique to Czech; háček (č š ž ě) + ring ů. 'ulice' = street. vs Slovak: no ä ô, has ř.",
   },
@@ -196,7 +196,7 @@ export const LANGUAGES: LanguageClue[] = [
     phrases: [
       "HLAVNÁ ULICA", "ZÁKAZ PARKOVANIA", "DAJ PREDNOSŤ V JAZDE", "NÚDZOVÝ VÝCHOD",
       "PRIECHOD PRE CHODCOV", "ZÁKAZ VJAZDU", "JEDNOSMERNÁ PREMÁVKA", "NA PREDAJ",
-      "ŽELEZNIČNÁ STANICA", "OTVORENÉ", "PEKÁREŇ", "LEKÁREŇ", "MÄSIARSTVO",
+      "ŽELEZNIČNÁ STANICA", "MESTSKÝ ÚRAD", "PEKÁREŇ", "LEKÁREŇ", "MÄSIARSTVO",
     ],
     note: "ä ô ľ ĺ ŕ mark it as Slovak, not Czech. 'ulica' = street. Very close to Czech otherwise.",
   },
@@ -217,11 +217,11 @@ export const LANGUAGES: LanguageClue[] = [
     group: "Slavic (Latin)",
     countries: ["Slovenia"],
     phrases: [
-      "GLAVNI TRG", "PARKIRANJE PREPOVEDANO", "PREDNOSTNA CESTA", "IZHOD V SILI",
-      "PREHOD ZA PEŠCE", "ENOSMERNA CESTA", "VSTOP PREPOVEDAN", "NAPRODAJ",
-      "ŽELEZNIŠKA POSTAJA", "MESTNA HIŠA", "PEKARNA", "LEKARNA", "MESARIJA",
+      "PARKIRANJE PREPOVEDANO", "PARKIRIŠČE", "PREHOD ZA PEŠCE", "IZHOD V SILI",
+      "VSTOP PREPOVEDAN", "ENOSMERNA CESTA", "NAPRODAJ", "ŽELEZNIŠKA POSTAJA",
+      "MESTNA HIŠA", "OBČINA", "DELOVNI ČAS", "SLAŠČIČARNA", "NUJNI IZHOD",
     ],
-    note: "Only č š ž (no ć đ) — that's the tell vs Croatian. Lots of 'prepovedano'. 'ulica' = street.",
+    note: "Only č š ž (no ć đ) — that's the tell vs Croatian. Signature words: 'prepovedano' = forbidden, 'izhod' = exit, 'naprodaj' = for sale.",
   },
 
   // ---- Slavic (Cyrillic) ----
@@ -302,7 +302,7 @@ export const LANGUAGES: LanguageClue[] = [
     phrases: [
       "PARKIMINE KEELATUD", "ANNA TEED", "SISSESÕIT KEELATUD", "VARUVÄLJAPÄÄS",
       "ÜHESUUNALINE TEE", "TEETÖÖD", "MÜÜA", "RAUDTEEJAAM",
-      "RAEKODA", "AVATUD", "PAGARIÄRI", "APTEEK", "LIHAPOOD",
+      "RAEKODA", "AVATUD", "PAGARIÄRI", "TÄNAV", "LIHAPOOD",
     ],
     note: "õ ä ö ü — the õ is the tell vs Finnish. 'tänav' = street. Shorter words than Finnish.",
   },
